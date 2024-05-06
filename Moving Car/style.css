@@ -1,0 +1,105 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    overflow: hidden;
+}
+.sky{
+    height: 90vh;
+    width: 130%;
+    background: url(background.jpg) no-repeat;
+    position: absolute;
+    /* animation: shakesky linear 8s infinite; */
+    
+}
+/* 
+Can not shake sky because tree, car and other are in .sky dic so that if you move sky it will sees like the sky will leave everthing behind
+.sky{
+    height: 90vh;
+    width: 800vw;
+    background: url(background.jpg) repeat-x;
+    position: absolute;
+    animation: carMove linear 250s infinite;
+} */
+.trees{
+    /* i placed the height in vh and shifted it so that i will fit on top of track .. it was just top-bottom-left-right position hit and trial  */
+    position: absolute;
+    bottom: 40px;
+    height: 100vh;
+    width: 100%;
+    background: url(trees.png) no-repeat;
+    background-size: cover;
+    animation: shakesky linear 40s infinite;
+}
+.track{
+    position: absolute;
+    top: 70vh;
+    height: 29vh;
+    width: 800vw;
+    animation: carMove linear 8s infinite;
+    background: url(track.png) repeat-x; 
+    /* here what 800vw is doing , its increasing the trcak image to very extent of the page making its right and left = web pages's right and left so repeat is done properly but if you set width as 100% it will makes its width =  width of the view port but in reality the tree image width is bigger than web page's width so track images breaks and we see a discontinued image at width 100% */
+    /* The background image is repeated only horizontally, increasing the width is very important coz */
+    /* background: url(track.png) no-repeat; default steady image */
+    /* background-size: cover; */
+} 
+
+.car{
+    position: absolute;
+    bottom: 175px;
+    left: 400px;
+    height: 100px;
+    width: 380px;
+    background: url(car_body.png) no-repeat;
+    background-size: cover;
+    animation: shake linear .7s infinite;
+}
+.wheel_1 img{
+    /* by default the position of images are static we have to me it other thanstaic so that the manupulation can happen */
+    position: relative;
+    width: 77px;
+    top: 39px;
+    left: 44px;
+    animation: wheelRotation linear .3s infinite;
+}
+.wheel_2 img{
+    position: relative;
+    width: 77px;
+    top: -42px;
+    left: 234px;
+    animation: wheelRotation linear .3s infinite;
+}
+@keyframes wheelRotation
+{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+@keyframes carMove{
+    100%{
+        transform: translateX(-500vw)
+    }
+}
+@keyframes shake{
+    0%{
+        transform: translateY(-2px)
+    }
+    50%{
+        transform: translateY(2px)
+    }
+    100%{
+        transform: translateX(-2px)
+    }
+}
+@keyframes shakesky{
+    0%{
+        transform: translateY(-50px)
+    }
+    50%{
+        transform: translateY(50px)
+    }
+    100%{
+        transform: translateX(-50px)
+    }
+}

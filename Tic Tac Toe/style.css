@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+nav ul {
+    list-style-type: none;
+}
+
+nav{
+    background-color: rgb(231, 101, 220);
+    color: white;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0px 12px;
+}
+.gameContainer{
+ /* background-color: bisque;    */
+ display: flex;
+ justify-content: center;
+ margin-top: 50px;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,10vw); 
+    grid-template-rows: repeat(3,10vw);
+    position: relative;
+    /*repeat(Column numbers/Row Numbers, the size of each column/row)*/
+    /* by default in grid-template-rows: only one 1 column is selected and then the remaining opne are alligned  in row(default format) */
+    /* vw is a website responsive texts */
+}
+.box{
+    border: 1px solid black;
+    font-size: 8vw;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.box:hover{
+    background-color: rgb(240, 232, 247);
+}
+.gameInfo{
+    padding: 0 34px;
+}
+.imgbox img{
+    width: 0;
+    transition: width 1s ease-in-out;
+    /* transition: ease-in-out; */
+}
+.bt-0{
+    border-top: 0;
+}
+.bb-0{
+    border-bottom: 0;
+}
+.bl-0{
+    border-left: 0;
+}
+.br-0{
+    border-right: 0;
+}
+
+#reset{
+    margin: 0 23px;
+    padding: 6px 14px;
+    background:rgb(240, 197, 236);
+    border-radius: 6px;
+    cursor: pointer;
+    /* cursor: progress; */
+}
+#GameHeadline{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 3.5vw;
+}
+.line{
+    background-color: black;
+    height: 3px;
+    width: 0;
+    position: absolute;
+    /* absolute postion will work with respect to its parent tag (i think it should be relative) with in this case is container */
+    background-color: rgb(194, 146, 238);
+    transition: width 1s ease-in-out;
+}
+@media screen and (max-width: 600px) {
+    .gameContainer{
+        /* it will make nay content in flex which becoming excessive in right(maybe left) go to bottom */
+        flex-wrap: wrap;
+    }
+    .gameInfo{
+        margin-top: 34px;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: repeat(3,20vw); 
+        grid-template-rows: repeat(3,20vw);
+    }
+    .info{
+        text-align: center;
+        font-weight: bold;
+    }
+  }

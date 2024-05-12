@@ -1,1 +1,0 @@
-This git repository contains Vanilla Web Projects(JS+HTML+CSS) made for Learning/Practicing purposes

@@ -31,6 +31,7 @@ const checkWin = () => {
       document
         .querySelector(".imgbox")
         .getElementsByTagName("img")[0].style.width = "200px";
+      gameOver.play();
 
       //Display succeess line
       document.querySelector(

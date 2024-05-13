@@ -1,6 +1,6 @@
-export const music = new Audio("./Media/music.mp3");
-export const audioTurn = new Audio("./Media/ting.mp3");
-export const gameOver = new Audio("./Media/gameover.mp3");
+export const music = new Audio("./Sound/music.mp3");
+export const audioTurn = new Audio("./Sound/ting.mp3");
+export const gameOver = new Audio("./Sound/gameover.mp3");
 
 export const winSlotsAndCoordinates = [
   //starting 3 slots are win conditions and last 3 are success line coordinates

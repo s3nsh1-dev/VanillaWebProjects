@@ -1,10 +1,15 @@
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+}
 .clockContainer {
     position: relative;
     margin: auto;
     background-color: aquamarine;
     height: 40vw;
     width: 40vw;
-    background: url(clock.png) no-repeat;
+    background: url(./Images/clock.png) no-repeat;
     background-size: 100%;
 }
 

@@ -8,15 +8,14 @@ nav ul {
 }
 
 nav{
-    background-color: rgb(231, 101, 220);
-    color: white;
+    background-color: rgb(255, 202, 251);
+    color: rgb(0, 0, 0);
     height: 45px;
     display: flex;
     align-items: center;
     padding: 0px 12px;
 }
 .gameContainer{
- /* background-color: bisque;    */
  display: flex;
  justify-content: center;
  margin-top: 50px;
@@ -40,7 +39,7 @@ nav{
 
 }
 .box:hover{
-    background-color: rgb(240, 232, 247);
+    background-color: rgb(245, 232, 255);
 }
 .gameInfo{
     padding: 0 34px;

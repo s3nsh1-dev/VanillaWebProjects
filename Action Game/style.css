@@ -3,14 +3,11 @@
     padding: 0%;
     overflow: hidden;
 }
-body{
-
-}
 .gameContainer{
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url(bg.png);
+    background-image: url(./Images/bg.png);
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
 }
@@ -20,7 +17,7 @@ body{
     left: 130px;
     width: 266px;
     height: 136px;
-    background-image: url(dino.png);
+    background-image: url(./Images/dino.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -30,7 +27,7 @@ body{
     height: 171px;
     bottom: 0;
     left: 702px;
-    background-image: url(dragon.png);
+    background-image: url(./Images/dragon.png);
     background-repeat: no-repeat;
     background-size: cover;
 }

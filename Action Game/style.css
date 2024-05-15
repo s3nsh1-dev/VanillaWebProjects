@@ -7,7 +7,8 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url(./Images/bg.png);
+    background-image: url(./Images/Designer0.png);
+    /* background-image: url(./Images/Designer.png); */
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
 }
@@ -16,18 +17,18 @@
     bottom: 0;
     left: 130px;
     width: 266px;
-    height: 136px;
-    background-image: url(./Images/dino.png);
+    height: 200px;
+    background-image: url(./Images/horse-riding.gif);
     background-repeat: no-repeat;
     background-size: cover;
 }
 .obstacle{
     position: absolute;
-    width: 251px;
+    width: 300px;
     height: 171px;
     bottom: 0;
     left: 702px;
-    background-image: url(./Images/dragon.png);
+    background-image: url(./Images/dragon-walk.gif);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -47,7 +48,7 @@
     }
 }
 .obstacleAni{
-    animation: obstacleAni 5s linear infinite;
+    animation: obstacleAni 10s linear infinite;
 
 }
 @keyframes obstacleAni{

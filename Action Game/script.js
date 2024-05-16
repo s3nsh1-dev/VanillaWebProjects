@@ -1,8 +1,7 @@
+import { deathAudio, backgroundAudio } from "./extra-data.js";
+
 let score = 0; // to Keep Tabs of score values
 let cross = true; // to see weather the dino and obstacle collisions happend or not... id yes then make it false for 1s then true again so that it doesn't amke the score values stuck
-
-const deathAudio = new Audio("./Sounds/gameover.mp3");
-const backgroundAudio = new Audio("./Sounds/music.mp3");
 const dino = document.querySelector(".dino");
 
 // game audio

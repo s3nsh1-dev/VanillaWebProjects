@@ -4,14 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Action Game</title>
   </head>
   <body>
     <main>
       <div class="gameContainer">
-        <div class="gameOver">Welcome to DragonWar!</div>
-        <!-- <div class="gameOver">Game Over- Reload to Play Again</div> -->
+        <div class="gameHeading">
+          <div id="title">
+            <img src="./Images/headingIMGFacingRight.png" alt="rightDrag" />
+            Dodge Sneaky Dragon
+            <img src="./Images/headingIMGFacingLeft.png" alt="leftDrag" />
+          </div>
+          <div id="gameOver">
+            <span style="font-size: 150px; margin: 0px">Game Over</span>
+            <p style="font-size: 50px; margin: 0px">
+              <img
+                src="./Images/BlackAndWhite.gif"
+                style="mix-blend-mode: multiply; position: relative; top: 6px"
+                alt="reload"
+              />
+              Reload to play
+            </p>
+          </div>
+        </div>
         <div class="userAvatar"></div>
         <div id="scoreCount">Your Score: 0</div>
         <div class="obstacle obstacleAni"></div>

@@ -71,7 +71,7 @@ function isCollided() {
 function updateScore(newDuration) {
   setTimeout(() => {
     score += 1;
-    document.getElementById("scoreCount").innerText = "Your Score: " + score;
+    document.getElementById("rankScore").value = score;
   }, newDuration);
 }
 
@@ -99,3 +99,10 @@ function increasingSpeed() {
   }
   updateScore(animationDuration);
 }
+
+document.getElementById("btn").addEventListener("click", () => {
+  const username = document.getElementById("userName").value;
+  const rScore = document.getElementById("rankScore").value;
+  sessionStorage.setItem(username, rScore);
+  alert("Warrior Data Saved!");
+});

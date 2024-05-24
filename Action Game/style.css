@@ -60,11 +60,16 @@
         left: -10vw;
     }
 }
-.gameOver{
+.gameHeading{
     position: relative;
     top: 35px;
     font-size: 100px;
     text-align: center;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: red;
+    text-shadow: 2px 1px black;
 }
 #scoreCont{
     position: absolute;
@@ -74,4 +79,14 @@
     padding: 10px;
     font-family: sans-serif;
     width: 112px;
+}
+.skeleGif{
+    height: 80px;
+    width: 90px;
+}
+#gameOver{
+    display: none;
+}
+#title{
+    display: block;
 }

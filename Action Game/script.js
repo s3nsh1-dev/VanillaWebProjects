@@ -4,6 +4,8 @@ import { deathAudio, backgroundAudio } from "./extra-data.js";
 // backgroundAudio.play();
 let score = 0;
 const userAvatar = document.querySelector(".userAvatar");
+const showTitle = document.getElementById("title");
+const showGameOver = document.getElementById("gameOver");
 let xCountArray = [];
 
 document.onkeydown = function (event) {
@@ -31,9 +33,9 @@ const gameLogic = setInterval(() => {
   if (isCollided()) {
     // deathAudio.play();
     document.querySelector(".obstacle").classList.remove("obstacleAni");
-    document.querySelector(".gameOver").innerText =
-      "Game  Over - Reload to Play";
-    backgroundAudio.pause();
+    showTitle.style.display = "none";
+    showGameOver.style.display = "block";
+    // backgroundAudio.pause();
     clearInterval(gameLogic);
   } else if (isPassed()) {
     increasingSpeed();
@@ -42,7 +44,6 @@ const gameLogic = setInterval(() => {
 }, 100);
 
 function isCollided() {
-  // deathAudio.pause();
   const obstacle = document.querySelector(".obstacle");
   const userAvatar = document.querySelector(".userAvatar");
   const userAvatarPosX = window

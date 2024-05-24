@@ -1,0 +1,10 @@
+make notes the thing learned till now = done
+change the name form dino to player
+make the possition of dino locked after collision
+improve  the score board
+Game over text will be red, comic sans font
+after game over make the score board appear beneath the game over text and hide the score board on the webpage
+remove redundant code
+add comments
+delete oldscript.js
+improve the readme with new web look

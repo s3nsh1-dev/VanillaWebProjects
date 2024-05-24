@@ -1,0 +1,8 @@
+
+make the possition of dino locked after collision
+improve  the score board
+after game over make the score board appear beneath the game over text and hide the score board on the webpage = no needed
+remove redundant code =
+add comments
+improve the readme with new web look
+discriptions: These names emphasize the stealthy and cunning nature of the dragon, adding an element of suspense and excitement to your game.

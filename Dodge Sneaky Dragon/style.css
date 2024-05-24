@@ -11,6 +11,58 @@
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
 }
+#scoreCount{
+    position: absolute;
+    top: 260px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 300px;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    background-color: transparent;
+    color: white;
+    border-radius: 30px;
+    border: 5px solid #0a9396;
+}
+#rankScore{
+    text-align: center;
+    height: 20px;
+    width: 50px;
+    border-radius: 20px;
+    border: 2px solid #fcbf49;
+    margin: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#userName{
+    padding-left: 5px;
+    border-radius: 20px;
+    border: 2px solid #fcbf49;
+    font-family: "Pacifico", cursive;
+}
+#btn{
+    height: 30px;
+    width: 100px;
+    border-radius: 20px;
+    color: white;
+    border: 2px solid #fcbf49;
+    background-color: transparent;
+    font-family: "Pacifico", cursive;
+}
+#description{
+    font-family: "Pacifico", cursive;
+    text-shadow: 1px 1px rgb(0, 0, 0);
+    position: absolute;
+    top: 260px;
+    color: rgb(102, 249, 102);
+    width: 300px;
+    right: 10px;
+    font-size: small;
+}
 .userAvatar{
     position: absolute;
     bottom: 0;
@@ -20,7 +72,6 @@
     background-image: url(./Images/horse-riding.gif);
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-color: rgb(128, 255, 37); */
 }
 .obstacle{
     position: absolute;
@@ -28,7 +79,6 @@
     height: 230px;
     bottom: 0;
     background-image: url(./Images/dragon-walk.gif);
-    /* background-color: brown; */
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -61,8 +111,8 @@
     }
 }
 .gameHeading{
-    position: relative;
-    top: 35px;
+    /* position: relative;
+    top: 35px; */
     font-size: 100px;
     text-align: center;
     font-family: "Pacifico", cursive;
@@ -70,15 +120,6 @@
     font-style: normal;
     color: red;
     text-shadow: 2px 1px black;
-}
-#scoreCont{
-    position: absolute;
-    right: 23px;
-    top: 23px;
-    border: 2px solid black;
-    padding: 10px;
-    font-family: sans-serif;
-    width: 112px;
 }
 .skeleGif{
     height: 80px;

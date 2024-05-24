@@ -15,33 +15,56 @@
     <link rel="icon" href="./Images/web-icon.png" type="image/x-icon" />
   </head>
   <body>
-    <main>
-      <div class="gameContainer">
-        <div class="gameHeading">
-          <div id="title" class="tracking-in-expand">
-            <img src="./Images/headingIMGFacingRight.png" alt="rightDrag" />
-            Dodge Sneaky Dragon
-            <img src="./Images/headingIMGFacingLeft.png" alt="leftDrag" />
-          </div>
-          <div id="gameOver">
-            <div class="breathing" style="font-size: 150px; margin: 0px">
-              Game Over
-            </div>
-            <p style="font-size: 50px; margin: 0px">
-              <img
-                src="./Images/BlackAndWhite.gif"
-                style="mix-blend-mode: multiply; position: relative; top: 6px"
-                alt="reload"
-              />
-              Reload to play
-            </p>
-          </div>
+    <div class="gameContainer">
+      <div class="gameHeading">
+        <div id="title" class="tracking-in-expand">
+          <img src="./Images/headingIMGFacingRight.png" alt="rightDrag" />
+          Dodge Sneaky Dragon
+          <img src="./Images/headingIMGFacingLeft.png" alt="leftDrag" />
         </div>
-        <div class="userAvatar"></div>
-        <div id="scoreCount">Your Score: 0</div>
-        <div class="obstacle obstacleAni"></div>
+        <div id="gameOver">
+          <div class="breathing" style="font-size: 150px; margin: 0px">
+            Game Over
+          </div>
+          <p style="font-size: 50px; margin: 0px">
+            <img
+              src="./Images/BlackAndWhite.gif"
+              style="mix-blend-mode: multiply; position: relative; top: 6px"
+              alt="reload"
+            />
+            Reload to play
+          </p>
+        </div>
       </div>
-    </main>
+      <div id="scoreCount">
+        <span
+          style="
+            font-size: 25px;
+            text-decoration: underline;
+            margin-bottom: 3px;
+          "
+          >Warrior Score</span
+        >
+        <div>
+          <label for="userName">Name</label>
+          <input id="userName" type="text" value="unknown-warrior" />
+        </div>
+        <div>
+          <label for="rankScore">Score</label>
+          <input id="rankScore" type="text" value="0" readonly />
+        </div>
+        <div>
+          <button type="button" id="btn">Save Data</button>
+        </div>
+      </div>
+      <div id="description">
+        Discriptions: The game emphasize the stealthy and cunning nature of the
+        dragon position, adding an element of suspense and excitement to your
+        game.
+      </div>
+      <div class="userAvatar"></div>
+      <div class="obstacle obstacleAni"></div>
+    </div>
     <script type="module" src="script.js"></script>
   </body>
 </html>

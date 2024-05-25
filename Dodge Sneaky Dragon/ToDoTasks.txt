@@ -1,4 +1,0 @@
-remove redundant code
-add comments
-improve the readme with new web look
-Discriptions: The game emphasize the stealthy and cunning nature of the dragon position, adding an element of suspense and excitement to your game.

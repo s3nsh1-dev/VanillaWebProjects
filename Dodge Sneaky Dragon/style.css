@@ -1,17 +1,12 @@
+/* Generic to all HTML Elements */
 *{
     margin: 0%;
     padding: 0%;
     overflow: hidden;
 }
-.gameContainer{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-image: url(./Images/Designer0.png);
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-}
-#scoreCount{
+
+/* Id's CSS  */
+#score-count{
     position: absolute;
     top: 260px;
     left: 10px;
@@ -29,7 +24,7 @@
     border-radius: 30px;
     border: 5px solid #0a9396;
 }
-#rankScore{
+#rank-score{
     text-align: center;
     height: 20px;
     width: 50px;
@@ -38,7 +33,7 @@
     margin: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-#userName{
+#user-name{
     padding-left: 5px;
     border-radius: 20px;
     border: 2px solid #fcbf49;
@@ -63,7 +58,43 @@
     right: 10px;
     font-size: small;
 }
-.userAvatar{
+#reload-gif{
+    mix-blend-mode: multiply;
+    position: relative;
+    top: 6px
+}
+#game-over {
+    display: none;
+}
+#title {
+    display: block;
+}
+#breathing {
+    -webkit-animation: breathing 1s ease-out infinite normal;
+    animation: breathing 1s ease-out infinite normal;
+    -webkit-font-smoothing: antialiased;
+    text-align: center;
+    font-size: 150px;
+}
+#reload2play {
+    font-size: 50px;
+}
+#w-score {
+    font-size: 25px;
+    text-decoration: underline;
+    margin-bottom: 3px;
+}
+
+/* Classes  CSS*/
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./Images/Designer0.png);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+.user-avatar{
     position: absolute;
     bottom: 0;
     left: 130px;
@@ -85,34 +116,12 @@
 .animateDino{
     animation: userAvatar .8s linear;
 }
-
-@keyframes userAvatar{
-    0%{
-        bottom: 0;
-    }
-    50%{
-        bottom: 750px;
-    }
-    100%{
-        bottom: 0;
-    }
-}
-.obstacleAni{
-    /* animation: obstacleAni 10s linear infinite; */
-    animation: obstacleAni 10s linear infinite;
+.obstacle-ani{
+    /* animation: obstacle-ani 10s linear infinite; */
+    animation: obstacle-ani 10s linear infinite;
 
 }
-@keyframes obstacleAni{
-    0%{
-        left: 100vw;
-    }
-    100%{
-        left: -10vw;
-    }
-}
-.gameHeading{
-    /* position: relative;
-    top: 35px; */
+.game-heading{
     font-size: 100px;
     text-align: center;
     font-family: "Pacifico", cursive;
@@ -125,19 +134,11 @@
     height: 80px;
     width: 90px;
 }
-#gameOver{
-    display: none;
-}
-#title{
-    display: block;
+.tracking-in-expand {
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
 }
 
-.breathing {
-    -webkit-animation: breathing 1s ease-out infinite normal;
-    animation: breathing 1s ease-out infinite normal;
-    -webkit-font-smoothing: antialiased;
-    text-align: center;
-}
+/* Keyfames CSS */
 @-webkit-keyframes breathing {
     0% {
         -webkit-transform: scale(0.9);
@@ -181,9 +182,6 @@
         transform: scale(0.9);
     }
 }
-.tracking-in-expand {
-    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-}
 @keyframes tracking-in-expand {
     0% {
         letter-spacing: -0.5em;
@@ -194,5 +192,27 @@
     }
     100% {
         opacity: 1;
+    }
+}
+@keyframes obstacle-ani {
+    0% {
+        left: 100vw;
+    }
+
+    100% {
+        left: -10vw;
+    }
+}
+@keyframes userAvatar {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 750px;
+    }
+
+    100% {
+        bottom: 0;
     }
 }

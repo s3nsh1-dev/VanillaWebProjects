@@ -1,0 +1,9 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#starter{
+    text-decoration: dotted;
+    font-size: 100px;
+    font-weight: bold;
+}

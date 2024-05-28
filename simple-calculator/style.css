@@ -2,8 +2,81 @@
     margin: 0px;
     padding: 0px;
 }
-#starter{
-    text-decoration: dotted;
-    font-size: 100px;
-    font-weight: bold;
+body{
+    background-image: url("./images/bg-calculator.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.cal-body{
+    margin-top: 50px;
+    padding: 10px;
+    border: 3px solid #000000;
+    border-radius: 40px;
+    box-shadow: 1px 2px 9px 3px rgb(0, 0, 0);
+    background-color: #6f6e6e;
+}
+#calci-display{
+    height: 80px;
+    width: 550px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+.cal-numpad{
+    display: flex;
+    flex-direction: row;
+}
+.cal-btn-ui{
+    height: 90px;
+    width: 80px;
+    border-radius: 30px;
+    margin: 5px;
+    font-size: 30px;
+    box-shadow: 2px 1px 0px 0px rgb(0, 0, 0);
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.formula{
+    display: flex;
+    flex-direction: column;
+}
+.mech-btn{
+    display: flex;
+    flex-direction: row;
+}
+.logic{
+    width: 180px;
+}
+.norm-num{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 300px;
+    justify-content: center;
+}
+.scrn-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#cmpny{
+    display: flex;
+    margin: 20px;
+    justify-content: end;
+}
+#casio{
+    background-color: white;
+    border: 2px solid rgb(255, 0, 0);
+    padding: 5px 20px;
+    font-size: 20px;
+    color: red;
 }

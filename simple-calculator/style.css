@@ -45,18 +45,18 @@ body{
     flex-direction: row;
     flex-wrap: wrap;
 }
-.formula{
+#formula{
     display: flex;
     flex-direction: column;
 }
-.mech-btn{
+#mech-btn{
     display: flex;
     flex-direction: row;
 }
-.logic{
+#logic{
     width: 180px;
 }
-.norm-num{
+#norm-num{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -79,4 +79,14 @@ body{
     padding: 5px 20px;
     font-size: 20px;
     color: red;
+}
+.h-70{
+    height: 70px;
+}
+.h-145 {
+    height: 145px;
+}
+.func-btn{
+    width: 100px;
+    height: 50px;
 }

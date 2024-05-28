@@ -144,3 +144,10 @@ export const logicBtn = [
     text: "=",
   },
 ];
+
+export const onSound = new Audio("./audios/on.mp3");
+export const offSound = new Audio("./audios/off.mp3");
+export const clearSound = new Audio("./audios/clear.mp3");
+export const backspaceSound = new Audio("./audios/backspace.mp3");
+export const clickSound = new Audio("./audios/click.mp3");
+export const resultSound = new Audio("./audios/result.mp3");

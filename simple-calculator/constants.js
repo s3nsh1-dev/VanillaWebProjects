@@ -2,12 +2,12 @@ export const mechBtn = [
   {
     class: "cal-btn-ui func-btn",
     value: "power",
-    text: "OFF",
+    text: "ON",
   },
   {
     class: "cal-btn-ui func-btn",
     value: "backspace",
-    text: "<==",
+    text: "<--",
   },
   {
     class: "cal-btn-ui func-btn",
@@ -110,7 +110,7 @@ export const logicBtn = [
   },
   {
     class: "cal-btn-ui h-70",
-    value: "√",
+    value: "root",
     text: "√",
   },
   {

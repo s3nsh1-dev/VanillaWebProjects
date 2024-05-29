@@ -7,6 +7,7 @@ import {
   clickSound,
   backspaceSound,
   resultSound,
+  errorSound,
 } from "./constants.js";
 
 // parent node of buttons
@@ -18,6 +19,8 @@ let stringValue = "";
 let casioColor = false;
 let previousInput = "";
 let numSign = true;
+let GTsum = 0;
+let memoryValue = 0;
 
 // calling createButtons() when DOM is loaded, to create buttons dynamically
 document.addEventListener("DOMContentLoaded", () => {
@@ -49,7 +52,18 @@ setTimeout(() => {
   const allButtons = document.getElementsByTagName("button");
   Array.from(allButtons).forEach((calculatorButton) => {
     calculatorButton.addEventListener("click", (event) => {
-      // filterLogic() will evaluate the button & act based on its value
+      // filterLogic() will evaluate the button & act based on its value'
+      if (event.target.value === "GT") {
+        event.target.addEventListener("dblclick", () => {
+          GTsum = 0;
+          console.log("GT = ", GTsum);
+        });
+      } else if (event.target.value === "MRC") {
+        event.target.addEventListener("dblclick", () => {
+          memoryValue = 0;
+          console.log("Memory Value = ", memoryValue);
+        });
+      }
       filterLogic(event.target);
     });
   });
@@ -67,6 +81,29 @@ function filterLogic(pressedBtn) {
         );
         break;
 
+      case "clear":
+        clearSound.play();
+        stringValue = "";
+        break;
+
+      case "GT":
+        try {
+          if (isNaN(GTsum)) {
+            GTsum = 0;
+          }
+          let currentSum = Math.round(parseFloat(eval(stringValue)), 2);
+          GTsum += currentSum;
+        } catch (e) {
+          errorSound.play();
+          console.log(e.message);
+        }
+        console.log("GT = " + GTsum);
+        break;
+
+      case "MRC":
+        console.log("Displaying =", memoryValue);
+        break;
+
       case "sign change":
         numSign = !numSign;
         if (!numSign) {
@@ -78,23 +115,28 @@ function filterLogic(pressedBtn) {
         }
         break;
 
-      case "clear":
-        clearSound.play();
-        stringValue = "";
-        break;
-
       case "root":
         stringValue = eval(`Math.sqrt(${stringValue})`);
         console.log("input:", stringValue);
         break;
 
+      case "M+":
+        memoryValue += stringValue;
+        break;
+
+      case "M-":
+        memoryValue -= stringValue;
+        break;
+
       case "equals":
         try {
-          console.log("Results = ", eval(stringValue));
-          stringValue = eval(stringValue);
+          const result = new Function(`return ${stringValue}`)();
+          stringValue = parseFloat(result).toFixed(3);
+          console.log("Result:", stringValue); // Output: 18
           resultSound.play();
         } catch (e) {
-          console.log(e.message);
+          stringValue = stringValue.slice(0, -1);
+          console.error("Error evaluating expression:", e);
         }
         break;
 

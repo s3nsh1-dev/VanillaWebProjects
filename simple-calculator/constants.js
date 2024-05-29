@@ -151,3 +151,4 @@ export const clearSound = new Audio("./audios/clear.mp3");
 export const backspaceSound = new Audio("./audios/backspace.mp3");
 export const clickSound = new Audio("./audios/click.mp3");
 export const resultSound = new Audio("./audios/result.mp3");
+export const errorSound = new Audio("./audios/error.mp3");

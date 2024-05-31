@@ -1,25 +1,73 @@
-function solveStringMathematically(str = "19+00100-.111111") {
+export function solveStringMathematically(str = "15+00100-15+20/20") {
   const separatedValues = [];
   let temp = "";
-  console.log(str.length);
   for (let i = 0; i < str.length; i++) {
-    if (isFinite(str[i])) {
+    // convert string into array separating integer and logical opertors
+    if (isFinite(str[i]) || str[i] === ".") {
+      // when we ge t a decimal point or any finite number
       temp += str[i];
     } else if (!isFinite(str[i])) {
+      //when we get a non-finite number
       separatedValues.push(Number(temp));
       separatedValues.push(str[i]);
       temp = "";
     }
     if (i == str.length - 1) {
-      separatedValues.push(Number(temp));
-      temp = "";
+      // last entry
+      if (!isFinite(str[i])) {
+        // when last entry in string
+        separatedValues.push("inValidEnding");
+      } else {
+        // when last entry is number
+        separatedValues.push(Number(temp));
+        temp = "";
+      }
     }
-    console.log("i=", i, "and temp", temp);
   }
-  const joined = separatedValues.join("");
-  // using eval() is counted as not a good practice so we used another similar approach
-  const result = new Function(`return ${joined}`)().toFixed(3);
-  // const result = eval(joined).toFixed(3);
-  console.log(result.includes("."));
+  return calculate(separatedValues);
 }
-solveStringMathematically();
+
+function calculate(separatedValues) {
+  let totalValue = 0;
+  if (separatedValues.includes("inValidEnding")) {
+    // user Input is Invalid...!
+    return undefined;
+  } else {
+    for (let i = 0; i <= separatedValues.length - 2; i++) {
+      if (!isFinite(separatedValues[i]) && isFinite(separatedValues[i + 1])) {
+        // current input is not string, next string is number
+        switch (separatedValues[i]) {
+          case "+":
+            totalValue += separatedValues[i + 1];
+            break;
+          case "-":
+            totalValue -= separatedValues[i + 1];
+            break;
+          case "*":
+            totalValue *= separatedValues[i + 1];
+            break;
+          case "/":
+            totalValue /= separatedValues[i + 1];
+            break;
+          case "√":
+            totalValue = Math.sqrt(separatedValues[i + 1]);
+            break;
+          case "%":
+            totalValue %= separatedValues[i + 1];
+            break;
+          default:
+            console.log("Invalid Operator");
+            break;
+        }
+      } else if (
+        isFinite(separatedValues[i]) &&
+        !(i == separatedValues.length - 1) &&
+        i == 0
+      ) {
+        // first Entry
+        totalValue = separatedValues[i];
+      }
+    }
+  }
+  return totalValue;
+}

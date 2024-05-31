@@ -9,6 +9,7 @@ import {
   resultSound,
   errorSound,
 } from "./constants.js";
+import { solveStringMathematically } from "./calculation-logic.js";
 
 // parent node of buttons
 const mechContainer = document.getElementById("mech-btn");
@@ -87,17 +88,19 @@ function filterLogic(pressedBtn) {
         break;
 
       case "GT":
-        try {
-          if (isNaN(GTsum)) {
-            GTsum = 0;
+        setTimeout(() => {
+          try {
+            if (isNaN(GTsum)) {
+              GTsum = 0;
+            }
+            let currentSum = Math.round(parseFloat(eval(stringValue)), 2);
+            GTsum += currentSum;
+          } catch (e) {
+            errorSound.play();
+            console.log(e.message);
           }
-          let currentSum = Math.round(parseFloat(eval(stringValue)), 2);
-          GTsum += currentSum;
-        } catch (e) {
-          errorSound.play();
-          console.log(e.message);
-        }
-        console.log("GT = " + GTsum);
+          console.log("GT = " + GTsum);
+        }, 2000);
         break;
 
       case "MRC":
@@ -130,10 +133,10 @@ function filterLogic(pressedBtn) {
 
       case "equals":
         try {
-          const result = new Function(`return ${stringValue}`)();
-          stringValue = parseFloat(result).toFixed(3);
-          console.log("Result:", stringValue); // Output: 18
+          const result = "" + solveStringMathematically(stringValue);
+          console.log("Result:", result);
           resultSound.play();
+          stringValue = result;
         } catch (e) {
           stringValue = stringValue.slice(0, -1);
           console.error("Error evaluating expression:", e);

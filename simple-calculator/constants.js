@@ -110,7 +110,7 @@ export const logicBtn = [
   },
   {
     class: "cal-btn-ui h-70",
-    value: "root",
+    value: "√",
     text: "√",
   },
   {
